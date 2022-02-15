@@ -1,66 +1,38 @@
 <!DOCTYPE html>
+<html>
 
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>Happy Birthday!!!</title>
-        <link rel="shortcut icon" type="image" href="https://cdn.glitch.com/4150c8e7-a441-4501-ac8e-46e6834311c1%2Fcake.jpg?v=1612396113404"/>
-        <link rel="stylesheet" href="style.css">
-        
-    </head>
-    <body>
-        <div class="moon">
-            <div class="crater1"></div>
-            <div class="crater2"></div>
-            <div class="crater3"></div>
-        </div>
-        
-        <canvas id="canvas"></canvas>
-        
-        <div id="sea"></div>
-        <div id="beach"></div>
-        
-        <div id="merrywrap" class="merrywrap">
-            <div class="giftbox">
-                <div class="cover">
-                    <div></div>
-                </div>
-                
-                <div class="box"></div>
-            </div>
-            
-            <div class="icons">
-                <div class="row">
-                    <span>H</span>
-                    <span>a</span>
-                    <span>p</span>
-                    <span>p</span>
-                    <span>y</span>
-                    
-                </div>
-                <div class="row">
-                    <span>B</span>
-                    <span>i</span>
-                    <span>r</span>
-                    <span>t</span>
-                    <span>h</span>
-                    <span>d</span>
-                    <span>a</span>
-                    <span>y</span>
-                </div>
-                
-                <div class="row">
-                    <span>M</span>
-                    <span>o</span>
-                    <span>m</span>
-                    <span>!</span>
-                </div>
-            </div>
-        </div>
-        
-        <div id="video"></div>
-        
-        <script src="index.js"></script>
-        
-    </body>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width" />
+  <title>Happy Birthday!</title>
+
+  <link rel="stylesheet" href="styles/flexbox-center-container.css" media="all">
+  <link rel="stylesheet" href="styles/system-fonts.css" media="all">
+  <link rel="stylesheet" href="styles/style.css" media="all">
+</head>
+
+<body>
+  <canvas id=c></canvas>
+  <canvas id="confetti"></canvas>
+  <div class="container" id="count">
+    <h1 id="head">Countdown to your birthday:</h1>
+    <ul>
+      <li><span id="day"></span>days</li>
+      <li><span id="hour"></span>hours</li>
+      <li><span id="minute"></span>minutes</li>
+      <li><span id="second"></span>seconds</li>
+    </ul>
+  </div>
+  <div id="merrywrap" class="merrywrap">
+    <canvas id="snowfall"></canvas>
+    <div class="giftbox">
+      <div class="cover">
+        <div></div>
+      </div>
+      <div class="box"></div>
+    </div>
+</body>
+<script src="scripts/confetti.min.js" charset="utf-8"></script>
+<script src="scripts/index.js" charset="utf-8"></script>
+
 </html>
