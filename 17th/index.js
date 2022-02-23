@@ -10,4 +10,4 @@ function passcheck() {
     if (document.getElementById('pass1').value == password) {
         alert("happy birthday! hope u enjoy ur tiger friend!");
     }
-}
+}  
