@@ -1,0 +1,708 @@
+body {
+    overflow: hidden;
+    background-color: #f1f1f1;
+  }
+  
+  .wrapper {
+    height: 80vh;
+    width: calc(100vw - 20px);
+    margin: 10vh 10px 0;
+    font-family: "Roboto Slab", serif;
+  }
+  
+  .title {
+    font-weight: 400;
+    font-size: 2em;
+    line-height: 1.2;
+    margin: 0.25em auto;
+    text-align: center;
+    width: 90%;
+  }
+  
+  .subtitle {
+    font-weight: 300;
+    font-size: 1.5em;
+    line-height: 1.2;
+    margin: 0.25em auto 2em;
+    text-align: center;
+    width: 90%;
+  }
+  .subtitle small {
+    font-size: 50%;
+    color: #bbb;
+  }
+  
+  .heart {
+    position: relative;
+  }
+  .heart__left path, .heart__right path {
+    fill: #BE1E2D;
+  }
+  .heart__left {
+    width: 248.5px;
+    position: absolute;
+    left: 0;
+  }
+  @media screen and (max-width: 515px) {
+    .heart__left {
+      width: 50.2%;
+    }
+  }
+  .heart__right {
+    width: 287px;
+    position: absolute;
+    right: 0;
+  }
+  @media screen and (max-width: 515px) {
+    .heart__right {
+      width: 58%;
+    }
+  }
+  
+  .smiley {
+    width: 90vw;
+    left: 5vw;
+    height: 430px;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+    z-index: -1;
+    position: absolute;
+  }
+  .smiley__face {
+    background-color: #ffc40f;
+    background: radial-gradient(#ffc40f 45%, #F5AB35 85%);
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    position: relative;
+  }
+  .smiley__speech {
+    font-weight: 300;
+    text-align: center;
+  }
+  
+  .smiley__eye--left, .smiley__eye--right {
+    height: 10px;
+    width: 10px;
+    background-color: black;
+    border-radius: 50%;
+    position: absolute;
+    top: 35px;
+    transition: all 0.15s ease-out;
+  }
+  .smiley__eye--left {
+    left: 30px;
+  }
+  @media screen and (min-width: 1101px) and (max-width: 1200px) {
+    .smiley__eye--left {
+      top: 30px;
+      left: 20px;
+    }
+  }
+  @media screen and (min-width: 1201px) and (max-width: 1300px) {
+    .smiley__eye--left {
+      top: 35px;
+      left: 50px;
+    }
+  }
+  @media screen and (min-width: 1340px) and (max-width: 1350px) {
+    .smiley__eye--left {
+      height: 3px;
+      width: 12px;
+    }
+  }
+  @media screen and (min-width: 1390px) and (max-width: 1400px) {
+    .smiley__eye--left {
+      height: 3px;
+      width: 12px;
+    }
+  }
+  @media screen and (min-width: 1451px) and (max-width: 1650px) {
+    .smiley__eye--left {
+      height: 13px;
+      width: 13px;
+    }
+  }
+  @media screen and (min-width: 1651px) {
+    .smiley__eye--left {
+      height: 3px;
+      width: 15px;
+      transform: rotate(10deg);
+    }
+  }
+  .smiley__eye--right {
+    right: 30px;
+  }
+  @media screen and (min-width: 1101px) and (max-width: 1200px) {
+    .smiley__eye--right {
+      top: 35px;
+      right: 50px;
+    }
+  }
+  @media screen and (min-width: 1201px) and (max-width: 1300px) {
+    .smiley__eye--right {
+      top: 30px;
+      right: 20px;
+    }
+  }
+  @media screen and (min-width: 1340px) and (max-width: 1350px) {
+    .smiley__eye--right {
+      height: 3px;
+      width: 12px;
+    }
+  }
+  @media screen and (min-width: 1390px) and (max-width: 1400px) {
+    .smiley__eye--right {
+      height: 3px;
+      width: 12px;
+    }
+  }
+  @media screen and (min-width: 1451px) and (max-width: 1650px) {
+    .smiley__eye--right {
+      height: 13px;
+      width: 13px;
+    }
+  }
+  @media screen and (min-width: 1651px) {
+    .smiley__eye--right {
+      height: 3px;
+      width: 15px;
+      transform: rotate(-10deg);
+    }
+  }
+  
+  .smiley__mouth {
+    width: 40px;
+    position: absolute;
+    bottom: 25px;
+    left: 30px;
+    border-bottom: 3px solid black;
+    border-radius: 0 0 50% 50%;
+  }
+  @media screen and (min-width: 850px) {
+    .smiley__mouth {
+      transition: all 0.15s ease-out;
+      border-radius: 50%;
+    }
+  }
+  @media screen and (max-width: 800px) {
+    .smiley__mouth {
+      height: 15px;
+      background-color: #000;
+      bottom: 20px;
+      width: 30px;
+      left: 35px;
+    }
+    .smiley__mouth:before {
+      content: "";
+      height: 0;
+      width: 0;
+      position: absolute;
+      border-right: 10px solid black;
+      border-bottom: 12px solid transparent;
+      top: 0;
+      left: -9px;
+    }
+    .smiley__mouth:after {
+      content: "";
+      height: 0;
+      width: 0;
+      position: absolute;
+      border-left: 10px solid black;
+      border-bottom: 12px solid transparent;
+      top: 0;
+      right: -9px;
+    }
+  }
+  @media screen and (min-width: 801px) and (max-width: 1000px) {
+    .smiley__mouth {
+      height: 15px;
+    }
+  }
+  @media screen and (min-width: 1100px) and (max-width: 1200px) {
+    .smiley__mouth {
+      left: 20px;
+      transform: rotate(10deg);
+      width: 30px;
+    }
+  }
+  @media screen and (min-width: 1201px) and (max-width: 1300px) {
+    .smiley__mouth {
+      left: 50px;
+      transform: rotate(-10deg);
+      width: 30px;
+    }
+  }
+  @media screen and (min-width: 1401px) {
+    .smiley__mouth {
+      border-radius: 50%;
+      width: 20px;
+      height: 20px;
+      left: 40px;
+      bottom: 20px;
+      background-color: #000;
+    }
+  }
+  @media screen and (min-width: 2001px) {
+    .smiley__mouth {
+      width: 30px;
+      height: 25px;
+      left: 35px;
+    }
+  }
+  
+  .tear {
+    height: 8px;
+    width: 8px;
+    background-color: rgba(25, 181, 254, 0.75);
+    position: absolute;
+    top: 45px;
+    border-radius: 50%;
+    opacity: 0;
+    z-index: 100;
+  }
+  .tear:before {
+    content: "";
+    height: 0;
+    width: 0;
+    border-bottom: 10px solid rgba(25, 181, 254, 0.75);
+    border-left: 4px solid transparent;
+    position: absolute;
+    top: -6px;
+    left: 0px;
+  }
+  .tear:after {
+    content: "";
+    height: 0;
+    width: 0;
+    border-bottom: 10px solid rgba(25, 181, 254, 0.75);
+    border-right: 4px solid transparent;
+    position: absolute;
+    top: -6px;
+    right: 0px;
+  }
+  @media screen and (min-width: 1700px) {
+    .tear1 {
+      left: 32px;
+      -webkit-animation: cry 1s 0.4s infinite;
+              animation: cry 1s 0.4s infinite;
+    }
+  }
+  @media screen and (min-width: 1700px) {
+    .tear2 {
+      left: 35px;
+      -webkit-animation: cry 2s 0.1s infinite;
+              animation: cry 2s 0.1s infinite;
+    }
+  }
+  @media screen and (min-width: 1700px) {
+    .tear3 {
+      left: 24px;
+      -webkit-animation: cry 1s 0.4s infinite;
+              animation: cry 1s 0.4s infinite;
+    }
+  }
+  @media screen and (min-width: 1700px) {
+    .tear4 {
+      left: 58px;
+      -webkit-animation: cry 3s 0.4s infinite;
+              animation: cry 3s 0.4s infinite;
+    }
+  }
+  @media screen and (min-width: 1700px) {
+    .tear5 {
+      left: 59px;
+      -webkit-animation: cry 0.5s 0.4s infinite;
+              animation: cry 0.5s 0.4s infinite;
+    }
+  }
+  @media screen and (min-width: 1700px) {
+    .tear6 {
+      left: 61px;
+      -webkit-animation: cry 1.5s 0.4s infinite;
+              animation: cry 1.5s 0.4s infinite;
+    }
+  }
+  @media screen and (min-width: 1801px) {
+    .tear7 {
+      left: 30px;
+      -webkit-animation: cryharder 0.5s 0.3s infinite;
+              animation: cryharder 0.5s 0.3s infinite;
+    }
+  }
+  @media screen and (min-width: 1801px) {
+    .tear8 {
+      left: 26px;
+      -webkit-animation: cryharder 1s 0.4s infinite;
+              animation: cryharder 1s 0.4s infinite;
+    }
+  }
+  @media screen and (min-width: 1801px) {
+    .tear9 {
+      left: 25px;
+      -webkit-animation: cryharder 1.5s 0.5s infinite;
+              animation: cryharder 1.5s 0.5s infinite;
+    }
+  }
+  @media screen and (min-width: 1801px) {
+    .tear10 {
+      left: 28px;
+      -webkit-animation: cryharder 0.5s 0.5s infinite;
+              animation: cryharder 0.5s 0.5s infinite;
+    }
+  }
+  @media screen and (min-width: 1801px) {
+    .tear11 {
+      left: 35px;
+      -webkit-animation: cryharder 1s 0.2s infinite;
+              animation: cryharder 1s 0.2s infinite;
+    }
+  }
+  @media screen and (min-width: 1801px) {
+    .tear12 {
+      left: 22px;
+      -webkit-animation: cryharder 0.5s 0.4s infinite;
+              animation: cryharder 0.5s 0.4s infinite;
+    }
+  }
+  @media screen and (min-width: 1801px) {
+    .tear13 {
+      left: 22px;
+      -webkit-animation: cryharder 1.5s 0.2s infinite;
+              animation: cryharder 1.5s 0.2s infinite;
+    }
+  }
+  @media screen and (min-width: 1801px) {
+    .tear14 {
+      left: 62px;
+      -webkit-animation: cryharder 2s 0.4s infinite;
+              animation: cryharder 2s 0.4s infinite;
+    }
+  }
+  @media screen and (min-width: 1801px) {
+    .tear15 {
+      left: 56px;
+      -webkit-animation: cryharder 3s 0.5s infinite;
+              animation: cryharder 3s 0.5s infinite;
+    }
+  }
+  @media screen and (min-width: 1801px) {
+    .tear16 {
+      left: 62px;
+      -webkit-animation: cryharder 0.5s 0.5s infinite;
+              animation: cryharder 0.5s 0.5s infinite;
+    }
+  }
+  @media screen and (min-width: 1801px) {
+    .tear17 {
+      left: 69px;
+      -webkit-animation: cryharder 1.5s 0.1s infinite;
+              animation: cryharder 1.5s 0.1s infinite;
+    }
+  }
+  @media screen and (min-width: 1801px) {
+    .tear18 {
+      left: 58px;
+      -webkit-animation: cryharder 2s 0.5s infinite;
+              animation: cryharder 2s 0.5s infinite;
+    }
+  }
+  @media screen and (min-width: 1801px) {
+    .tear19 {
+      left: 57px;
+      -webkit-animation: cryharder 2.5s 0.5s infinite;
+              animation: cryharder 2.5s 0.5s infinite;
+    }
+  }
+  @media screen and (min-width: 2001px) {
+    .tear21 {
+      left: 32px;
+      -webkit-animation: cryhardest 0.5s 0.2s infinite;
+              animation: cryhardest 0.5s 0.2s infinite;
+    }
+  }
+  @media screen and (min-width: 2001px) {
+    .tear22 {
+      left: 30px;
+      -webkit-animation: cryhardest 1.5s 0.1s infinite;
+              animation: cryhardest 1.5s 0.1s infinite;
+    }
+  }
+  @media screen and (min-width: 2001px) {
+    .tear23 {
+      left: 34px;
+      -webkit-animation: cryhardest 2s 0.4s infinite;
+              animation: cryhardest 2s 0.4s infinite;
+    }
+  }
+  @media screen and (min-width: 2001px) {
+    .tear24 {
+      left: 28px;
+      -webkit-animation: cryhardest 1.5s 0.3s infinite;
+              animation: cryhardest 1.5s 0.3s infinite;
+    }
+  }
+  @media screen and (min-width: 2001px) {
+    .tear25 {
+      left: 25px;
+      -webkit-animation: cryhardest 2s 0.1s infinite;
+              animation: cryhardest 2s 0.1s infinite;
+    }
+  }
+  @media screen and (min-width: 2001px) {
+    .tear26 {
+      left: 26px;
+      -webkit-animation: cryhardest 0.5s 0.3s infinite;
+              animation: cryhardest 0.5s 0.3s infinite;
+    }
+  }
+  @media screen and (min-width: 2001px) {
+    .tear27 {
+      left: 30px;
+      -webkit-animation: cryhardest 2s 0.5s infinite;
+              animation: cryhardest 2s 0.5s infinite;
+    }
+  }
+  @media screen and (min-width: 2001px) {
+    .tear28 {
+      left: 32px;
+      -webkit-animation: cryhardest 0.5s 0.1s infinite;
+              animation: cryhardest 0.5s 0.1s infinite;
+    }
+  }
+  @media screen and (min-width: 2001px) {
+    .tear29 {
+      left: 28px;
+      -webkit-animation: cryhardest 2s 0.5s infinite;
+              animation: cryhardest 2s 0.5s infinite;
+    }
+  }
+  @media screen and (min-width: 2001px) {
+    .tear30 {
+      left: 23px;
+      -webkit-animation: cryhardest 1s 0.5s infinite;
+              animation: cryhardest 1s 0.5s infinite;
+    }
+  }
+  @media screen and (min-width: 2001px) {
+    .tear31 {
+      left: 26px;
+      -webkit-animation: cryhardest 1s 0.2s infinite;
+              animation: cryhardest 1s 0.2s infinite;
+    }
+  }
+  @media screen and (min-width: 2001px) {
+    .tear32 {
+      left: 28px;
+      -webkit-animation: cryhardest 2s 0.2s infinite;
+              animation: cryhardest 2s 0.2s infinite;
+    }
+  }
+  @media screen and (min-width: 2001px) {
+    .tear33 {
+      left: 25px;
+      -webkit-animation: cryhardest 0.5s 0.5s infinite;
+              animation: cryhardest 0.5s 0.5s infinite;
+    }
+  }
+  @media screen and (min-width: 2001px) {
+    .tear34 {
+      left: 35px;
+      -webkit-animation: cryhardest 1s 0.3s infinite;
+              animation: cryhardest 1s 0.3s infinite;
+    }
+  }
+  @media screen and (min-width: 2001px) {
+    .tear35 {
+      left: 33px;
+      -webkit-animation: cryhardest 1.5s 0.4s infinite;
+              animation: cryhardest 1.5s 0.4s infinite;
+    }
+  }
+  @media screen and (min-width: 2001px) {
+    .tear36 {
+      left: 65px;
+      -webkit-animation: cryhardest 1s 0.2s infinite;
+              animation: cryhardest 1s 0.2s infinite;
+    }
+  }
+  @media screen and (min-width: 2001px) {
+    .tear37 {
+      left: 66px;
+      -webkit-animation: cryhardest 2s 0.5s infinite;
+              animation: cryhardest 2s 0.5s infinite;
+    }
+  }
+  @media screen and (min-width: 2001px) {
+    .tear38 {
+      left: 62px;
+      -webkit-animation: cryhardest 2s 0.1s infinite;
+              animation: cryhardest 2s 0.1s infinite;
+    }
+  }
+  @media screen and (min-width: 2001px) {
+    .tear39 {
+      left: 60px;
+      -webkit-animation: cryhardest 2s 0.5s infinite;
+              animation: cryhardest 2s 0.5s infinite;
+    }
+  }
+  @media screen and (min-width: 2001px) {
+    .tear40 {
+      left: 63px;
+      -webkit-animation: cryhardest 2s 0.3s infinite;
+              animation: cryhardest 2s 0.3s infinite;
+    }
+  }
+  @media screen and (min-width: 2001px) {
+    .tear41 {
+      left: 61px;
+      -webkit-animation: cryhardest 2s 0.4s infinite;
+              animation: cryhardest 2s 0.4s infinite;
+    }
+  }
+  @media screen and (min-width: 2001px) {
+    .tear42 {
+      left: 60px;
+      -webkit-animation: cryhardest 1s 0.5s infinite;
+              animation: cryhardest 1s 0.5s infinite;
+    }
+  }
+  @media screen and (min-width: 2001px) {
+    .tear43 {
+      left: 63px;
+      -webkit-animation: cryhardest 2s 0.1s infinite;
+              animation: cryhardest 2s 0.1s infinite;
+    }
+  }
+  @media screen and (min-width: 2001px) {
+    .tear44 {
+      left: 62px;
+      -webkit-animation: cryhardest 1.5s 0.1s infinite;
+              animation: cryhardest 1.5s 0.1s infinite;
+    }
+  }
+  @media screen and (min-width: 2001px) {
+    .tear45 {
+      left: 58px;
+      -webkit-animation: cryhardest 1.5s 0.3s infinite;
+              animation: cryhardest 1.5s 0.3s infinite;
+    }
+  }
+  @media screen and (min-width: 2001px) {
+    .tear46 {
+      left: 70px;
+      -webkit-animation: cryhardest 1.5s 0.4s infinite;
+              animation: cryhardest 1.5s 0.4s infinite;
+    }
+  }
+  @media screen and (min-width: 2001px) {
+    .tear47 {
+      left: 67px;
+      -webkit-animation: cryhardest 0.5s 0.5s infinite;
+              animation: cryhardest 0.5s 0.5s infinite;
+    }
+  }
+  @media screen and (min-width: 2001px) {
+    .tear48 {
+      left: 62px;
+      -webkit-animation: cryhardest 2s 0.5s infinite;
+              animation: cryhardest 2s 0.5s infinite;
+    }
+  }
+  @media screen and (min-width: 2001px) {
+    .tear49 {
+      left: 63px;
+      -webkit-animation: cryhardest 2s 0.1s infinite;
+              animation: cryhardest 2s 0.1s infinite;
+    }
+  }
+  @media screen and (min-width: 2001px) {
+    .tear50 {
+      left: 69px;
+      -webkit-animation: cryhardest 1s 0.5s infinite;
+              animation: cryhardest 1s 0.5s infinite;
+    }
+  }
+  
+  @-webkit-keyframes cry {
+    0% {
+      opacity: 0;
+    }
+    10% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(60px);
+      opacity: 0;
+    }
+  }
+  
+  @keyframes cry {
+    0% {
+      opacity: 0;
+    }
+    10% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(60px);
+      opacity: 0;
+    }
+  }
+  @-webkit-keyframes cryharder {
+    0% {
+      opacity: 0;
+    }
+    10% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(150px);
+      opacity: 0;
+    }
+  }
+  @keyframes cryharder {
+    0% {
+      opacity: 0;
+    }
+    10% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(150px);
+      opacity: 0;
+    }
+  }
+  @-webkit-keyframes cryhardest {
+    0% {
+      opacity: 0;
+    }
+    10% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(400px);
+      opacity: 0;
+    }
+  }
+  @keyframes cryhardest {
+    0% {
+      opacity: 0;
+    }
+    10% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(400px);
+      opacity: 0;
+    }
+  }
