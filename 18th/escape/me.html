@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>ESCAPE ESCAPE ESCAPE</title>
+  <!-- <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/@alphardex/aqua.css@1.5.5/dist/aqua.min.css'>
+  <link rel="stylesheet" href="./style.css"> -->
+  
+  <link rel="stylesheet" href='./min.css'>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+
+<!-- Camera -->
+<div class="camera">
+
+  <!-- Navigation -->
+  <input type="radio" id="nav-1" name="nav" class="nav-trigger-1" />
+  <input type="radio" id="nav-2" name="nav" class="nav-trigger-2" />
+  <input type="radio" id="nav-3" name="nav" class="nav-trigger-3" />
+  <input type="radio" id="nav-4" name="nav" class="nav-trigger-4" />
+  <form class="stage">
+
+    <!-- Objects -->
+    <input type="radio" id="globe" class="globe-trigger" />
+    <input type="radio" id="hammer" class="hammer-trigger" />
+    <input type="radio" id="drawer" class="drawer-trigger" />
+    <input type="radio" id="slab" class="slab-trigger" />
+    <input type="checkbox" id="picture" class="picture-trigger" />
+    <input type="radio" id="slab-groove" class="slab-groove-trigger" />
+    <input type="radio" id="usb" class="usb-trigger" />
+    <input type="radio" id="pc" class="pc-trigger" />
+    <input type="radio" id="key" class="key-trigger" />
+    <input type="radio" id="door" class="door-trigger" />
+    <input type="radio" id="door-open" class="door-open-trigger" />
+
+    <!-- Scenes -->
+    <div class="scene scene-1">
+      <label for="door" class="door h-center" data-tooltip="door" data-placement="top">
+        <img src="https://i.loli.net/2020/10/25/ZnB2IaV5Nq76MfR.png" alt class="w-24" />
+      </label>
+      <label for="door-open" class="door-open h-center" data-tooltip="door" data-placement="top">
+        <img src="https://i.loli.net/2020/10/25/9JgmT4Me6tHpY5c.png" alt class="w-24" />
+      </label>
+      <nav class="navs">
+        <label for="nav-4" class="nav-left"></label>
+        <label for="nav-2" class="nav-right"></label>
+      </nav>
+      <div class="hints">
+        <div class="hint door-trigger-active">You unlocked the door with the key.</div>
+        <div class="hint door-open-trigger-active">
+          
+          Good Job! You escaped! Code: IMFREE
+
+        </div>
+      </div>
+    </div>
+    
+    <!-- Images -->
+    <div class="scene scene-2">
+      <label for="drawer" class="drawer" data-tooltip="drawer" data-placement="left">
+        <img src="https://i.loli.net/2020/10/25/kiEUTazlO3GeRA2.png" alt class="w-12" />
+      </label>
+      <label for="globe" class="globe" data-tooltip="globe" data-placement="top">
+        <img src="https://i.loli.net/2020/10/25/YBnOQ2jVtSTmFkE.png" alt class="w-8" />
+      </label>
+      <img src="https://i.loli.net/2020/10/25/TfAyWaEN1k28lOv.png" alt class="breach w-12" title="breach" />
+      <label for="slab" class="slab" data-tooltip="coin" data-placement="left">
+        <img src="https://i.loli.net/2020/10/25/J5GrKZRVpf4aU9b.png" alt class="w-6" />
+      </label>
+      <label for="slab-groove" class="slab-groove" data-tooltip="slab-groove" data-placement="bottom">
+        <img src="https://i.loli.net/2020/10/25/tk3IoO4vVqhS529.png" alt class="w-6" />
+      </label>
+      <img src="https://i.loli.net/2020/10/25/J5GrKZRVpf4aU9b.png" alt class="slab-installed w-6" title="slab-installed" />
+      <label for="picture" class="picture" data-tooltip="picture" data-placement="bottom">
+        <img src="https://i.loli.net/2020/10/25/jeZJHvi2dlL56uG.png" alt class="w-8" />
+      </label>
+      <label for="usb" class="usb" data-tooltip="usb" data-placement="top">
+        <img src="https://i.loli.net/2020/10/25/DjldpVuToA5Fh9Y.png" alt class="w-4" />
+      </label>
+      <nav class="navs">
+        <label for="nav-1" class="nav-left"></label>
+        <label for="nav-3" class="nav-right"></label>
+      </nav>
+      
+      <!-- Prompts -->
+      <div class="hints">
+        <div class="hint globe-trigger-active">You spun the globe, and something dropped down.</div>
+        <div class="hint drawer-trigger-active">You cracked the drawer with the hammer and found a coin.</div>
+        <div class="hint slab-trigger-active">You took the coin.</div>
+        <div class="hint slab-groove-trigger-active">You put the coin into the groove and found a usb.</div>
+        <div class="hint usb-trigger-active">You took the usb.</div>
+      </div>
+    </div>
+    
+    <!-- Scene 3 -->
+    <div class="scene scene-3">
+      <div class="password">
+        I I IV <br />
+        V I IV
+      </div>
+      <label for="hammer" class="hammer" data-tooltip="hammer" data-placement="top">
+        <img src="https://i.loli.net/2020/10/25/KhVp4EaMoYrjlIC.png" alt class="w-6" />
+      </label>
+      <nav class="navs">
+        <label for="nav-2" class="nav-left"></label>
+        <label for="nav-4" class="nav-right"></label>
+      </nav>
+      <div class="hints">
+        <div class="hint hammer-trigger-active">You took the hammer.</div>
+      </div>
+    </div>
+    <div class="scene scene-4">
+      <label for="pc" class="pc h-center" data-tooltip="pc" data-placement="top">
+        <img src="https://i.loli.net/2020/10/26/VuNWLqTlZIfvUsF.png" alt class="w-16" />
+      </label>
+      <label for="pc-on" class="pc-on h-center" data-tooltip="pc-on" data-placement="top">
+        <img src="https://i.loli.net/2020/10/25/y8OJ7QtlnFZAvrV.png" alt class="w-16" />
+      </label>
+      <input type="password" id="password" pattern="114514" class="password-input form-control" required />
+      <img src="https://i.loli.net/2020/10/25/rjmZ1gyTRdUzAk7.png" alt class="desk w-24 h-center" />
+      <label for="key" class="key h-center" data-tooltip="key" data-placement="top">
+        <img src="https://i.loli.net/2020/10/25/wfVxH9bDORkjr5q.png" alt class="w-6" />
+      </label>
+      <nav class="navs">
+        <label for="nav-3" class="nav-left"></label>
+        <label for="nav-1" class="nav-right"></label>
+      </nav>
+      <div class="hints">
+        <div class="hint pc-trigger-active">The PC is turned on. It looks like you need to enter the password.</div>
+        <div class="hint key-trigger-active">You took the key.</div>
+      </div>
+    </div>
+  </form>
+</div>
+
+</body>
+</html>

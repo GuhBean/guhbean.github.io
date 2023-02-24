@@ -1,0 +1,417 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: black;
+  overflow: hidden;
+}
+
+:root {
+  --secondary-color-darkest: #333;
+  --yellow-color-1: #e67e22;
+}
+
+.form-control {
+  --input-padding: 1px;
+  --input-bg: transparent;
+  border: none;
+}
+
+.camera {
+  --stage-width: 18rem;
+  --scene-id: 0;
+  position: relative;
+  width: var(--stage-width);
+  height: var(--stage-width);
+  overflow: hidden;
+}
+
+.stage {
+  transform: translateY(calc(var(--stage-width) * var(--scene-id) * -1));
+}
+
+.scene {
+  position: relative;
+  width: var(--stage-width);
+  height: var(--stage-width);
+  background: linear-gradient(to bottom, #dad3c5 0 75%, #2b1814 0 0);
+}
+
+.hints {
+  position: absolute;
+  bottom: 0.2rem;
+  width: 100%;
+  color: white;
+  font-size: 0.75rem;
+  text-align: center;
+}
+
+input[type=checkbox],
+input[type=radio] {
+  display: none;
+}
+
+label {
+  position: absolute;
+  display: inline-block;
+  color: white;
+  font-size: 12px;
+  cursor: pointer;
+  transition: 0.1s;
+}
+label:hover {
+  filter: brightness(1.5);
+}
+
+.navs {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+.navs label {
+  position: static;
+  width: 2rem;
+  height: 2rem;
+  background: var(--yellow-color-1);
+  pointer-events: auto;
+}
+.navs label.nav-left {
+  -webkit-clip-path: polygon(50% 50%, 100% 100%, 100% 0);
+          clip-path: polygon(50% 50%, 100% 100%, 100% 0);
+}
+.navs label.nav-right {
+  -webkit-clip-path: polygon(0 0, 0 100%, 50% 50%);
+          clip-path: polygon(0 0, 0 100%, 50% 50%);
+}
+
+.triggers {
+  display: flex;
+  flex-direction: column;
+}
+
+.hint {
+  display: none;
+}
+
+.nav-trigger-1:checked ~ .stage {
+  --scene-id: 0;
+}
+
+.nav-trigger-2:checked ~ .stage {
+  --scene-id: 1;
+}
+
+.nav-trigger-3:checked ~ .stage {
+  --scene-id: 2;
+}
+
+.nav-trigger-4:checked ~ .stage {
+  --scene-id: 3;
+}
+
+.hammer {
+  display: none;
+  transition: 0.3s;
+}
+
+.globe-trigger:checked ~ .scene .globe {
+  pointer-events: none;
+}
+.globe-trigger:checked ~ .scene .hammer {
+  display: inline-block;
+}
+.globe-trigger:checked ~ .scene .hints .hint {
+  display: none !important;
+}
+.globe-trigger:checked ~ .scene .hints .globe-trigger-active {
+  display: inline-block !important;
+}
+
+.hammer-trigger:checked ~ .scene .hammer {
+  transform: scale(0);
+  opacity: 0;
+}
+.hammer-trigger:checked ~ .scene .hints .hint {
+  display: none !important;
+}
+.hammer-trigger:checked ~ .scene .hints .hammer-trigger-active {
+  display: inline-block !important;
+}
+
+.drawer {
+  pointer-events: none;
+}
+
+.slab {
+  display: none;
+  transition: 0.3s;
+}
+
+.breach {
+  display: none;
+}
+
+.hammer-trigger:checked ~ .scene .drawer {
+  pointer-events: auto;
+}
+
+.drawer-trigger:checked ~ .scene .drawer {
+  pointer-events: none !important;
+}
+.drawer-trigger:checked ~ .scene .slab {
+  display: inline-block;
+}
+.drawer-trigger:checked ~ .scene .breach {
+  display: inline-block;
+}
+.drawer-trigger:checked ~ .scene .hints .hint {
+  display: none !important;
+}
+.drawer-trigger:checked ~ .scene .hints .drawer-trigger-active {
+  display: inline-block !important;
+}
+
+.slab-trigger:checked ~ .scene .slab {
+  transform: scale(0);
+  opacity: 0;
+}
+.slab-trigger:checked ~ .scene .hints .hint {
+  display: none !important;
+}
+.slab-trigger:checked ~ .scene .hints .slab-trigger-active {
+  display: inline-block !important;
+}
+
+.slab-groove {
+  pointer-events: none;
+}
+
+.slab-installed {
+  display: none;
+}
+
+.picture-trigger:checked ~ .scene .picture {
+  transform: translateX(2rem);
+}
+
+.usb {
+  display: none;
+  transition: 0.3s;
+}
+
+.slab-trigger:checked ~ .scene .slab-groove {
+  pointer-events: auto;
+}
+
+.slab-groove-trigger:checked ~ .scene .slab-groove {
+  display: none;
+  pointer-events: none !important;
+}
+.slab-groove-trigger:checked ~ .scene .slab-installed {
+  display: inline-block;
+}
+.slab-groove-trigger:checked ~ .scene .usb {
+  display: inline-block;
+}
+.slab-groove-trigger:checked ~ .scene .hints .hint {
+  display: none !important;
+}
+.slab-groove-trigger:checked ~ .scene .hints .slab-groove-trigger-active {
+  display: inline-block !important;
+}
+
+.usb-trigger:checked ~ .scene .usb {
+  transform: scale(0);
+  opacity: 0;
+}
+.usb-trigger:checked ~ .scene .hints .hint {
+  display: none !important;
+}
+.usb-trigger:checked ~ .scene .hints .usb-trigger-active {
+  display: inline-block !important;
+}
+
+.pc {
+  pointer-events: none;
+}
+
+.pc-on {
+  display: none;
+}
+
+.password-input {
+  display: none;
+}
+
+.door {
+  pointer-events: none;
+}
+
+.door-open {
+  display: none;
+}
+
+.key {
+  display: none;
+  transition: 0.3s;
+}
+
+.usb-trigger:checked ~ .scene .pc {
+  pointer-events: auto;
+}
+
+.pc-trigger:checked ~ .scene .pc {
+  pointer-events: none !important;
+}
+.pc-trigger:checked ~ .scene .pc-on {
+  display: inline-block;
+}
+.pc-trigger:checked ~ .scene .password-input {
+  display: inline-block;
+}
+.pc-trigger:checked ~ .scene .hints .hint {
+  display: none !important;
+}
+.pc-trigger:checked ~ .scene .hints .pc-trigger-active {
+  display: block !important;
+}
+
+.password-input:valid {
+  pointer-events: none;
+}
+.password-input:valid ~ .key {
+  display: inline-block;
+}
+
+.key-trigger:checked ~ .scene .key {
+  transform: scale(0);
+  opacity: 0;
+}
+.key-trigger:checked ~ .scene .door {
+  pointer-events: auto;
+}
+.key-trigger:checked ~ .scene .hints .hint {
+  display: none !important;
+}
+.key-trigger:checked ~ .scene .hints .key-trigger-active {
+  display: block !important;
+}
+
+.door-trigger:checked ~ .scene .door {
+  display: none;
+  pointer-events: none !important;
+}
+.door-trigger:checked ~ .scene .door-open {
+  display: inline-block;
+}
+.door-trigger:checked ~ .scene .hints .hint {
+  display: none !important;
+}
+.door-trigger:checked ~ .scene .hints .door-trigger-active {
+  display: block !important;
+}
+
+.door-open-trigger:checked ~ .scene .door-open {
+  pointer-events: none;
+}
+.door-open-trigger:checked ~ .scene .hints .hint {
+  display: none !important;
+}
+.door-open-trigger:checked ~ .scene .hints .door-open-trigger-active {
+  display: block !important;
+}
+.door-open-trigger:checked ~ .scene .navs {
+  display: none;
+}
+
+.door {
+  top: 27.3%;
+}
+
+.globe {
+  top: 34.5%;
+  right: 26.7%;
+}
+
+.drawer {
+  top: 48.5%;
+  right: 24%;
+}
+
+.picture {
+  top: 15%;
+  left: 28%;
+  transition: transform 0.3s, filter 0.1s;
+}
+
+.password {
+  position: absolute;
+  top: 7%;
+  left: 36%;
+  width: 5rem;
+  line-height: 2;
+  font-size: 2rem;
+  white-space: nowrap;
+  text-align: center;
+  font-weight: bold;
+}
+
+.hammer {
+  top: 60%;
+  left: 45%;
+}
+
+.breach {
+  position: absolute;
+  top: 56%;
+  right: 24%;
+}
+
+.slab {
+  top: 77%;
+  right: 28%;
+}
+
+.slab-groove,
+.slab-installed {
+  position: absolute;
+  top: 20%;
+  left: 29%;
+}
+
+.usb {
+  top: 74%;
+  left: 28%;
+}
+
+.desk {
+  position: absolute;
+  top: 61%;
+}
+
+.pc,
+.pc-on {
+  top: 45%;
+}
+
+.key {
+  top: 77%;
+}
+
+.door-open {
+  position: absolute;
+  top: 27.5%;
+}
+
+.password-input {
+  position: absolute;
+  top: 47.5%;
+  left: 42.5%;
+  width: 2.5rem;
+  font-size: 12px;
+}

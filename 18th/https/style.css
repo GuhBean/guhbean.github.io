@@ -1,0 +1,32 @@
+body {
+    background-color: black;
+    background-image: radial-gradient(rgba(31, 31, 31, 0.75), #282828 120%);
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+    padding: 2rem;
+    color: #80f58a;
+    font: 1.3rem Inconsolata, monospace;
+    text-shadow: 0 0 13px #35e279;
+    filter: blur(0.7px);
+  }
+  body::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: repeating-linear-gradient(0deg, rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15) 3px, transparent 3px, transparent 6px);
+    pointer-events: none;
+  }
+  
+  .animate::selection {
+    background: #078011;
+    text-shadow: none;
+    color: white;
+  }
+  
+  pre {
+    margin: 0;
+  }
