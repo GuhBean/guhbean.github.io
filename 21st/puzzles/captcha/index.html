@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CAPTCHA</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="captcha-container">
+        <header class="captcha-header">
+            <div class="header-text">
+                <p>Select all squares with</p>
+                <h2 id="captchaTarget">Tinah</h2>
+                <p>If there are none, click skip</p>
+            </div>
+            <div class="header-icon">
+                <!-- Simple square grid icon -->
+                <svg width="64" height="64" viewBox="0 0 24 24">
+                    <rect x="2" y="2" width="6" height="6" fill="white" />
+                    <rect x="9" y="2" width="6" height="6" fill="white" />
+                    <rect x="16" y="2" width="6" height="6" fill="white" />
+                    <rect x="2" y="9" width="6" height="6" fill="white" />
+                    <rect x="9" y="9" width="6" height="6" fill="white" />
+                    <rect x="16" y="9" width="6" height="6" fill="white" />
+                    <rect x="2" y="16" width="6" height="6" fill="white" />
+                    <rect x="9" y="16" width="6" height="6" fill="white" />
+                    <rect x="16" y="16" width="6" height="6" fill="white" />
+                </svg>
+            </div>
+        </header>
+
+        <div class="captcha-grid" id="captchaGrid">
+            <!-- 9 images will be generated here -->
+        </div>
+
+        <footer class="captcha-footer">
+            <div class="footer-left">
+                <img src="https://www.gstatic.com/recaptcha/api2/logo_48.png" alt="reCAPTCHA" class="captcha-logo">
+                <div class="footer-links">
+                  <a href="#">Privacy</a> - <a href="#">Terms</a>
+                </div>
+            </div>
+            <div class="footer-right">
+                <button id="verifyBtn" class="btn-verify">VERIFY</button>
+            </div>
+        </footer>
+    </div>
+
+    <div id="messageModal" class="modal">
+        <div class="modal-content">
+            <h2>goodjob</h2>
+            <p>u might not be a robot</p>
+            <button id="continueBtn">continue</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

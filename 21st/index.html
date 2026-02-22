@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ok here u go</title>
+    <style>
+        body { margin: 0; }
+        .center-viewport {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            gap: 8px;
+            text-align: center;
+        }
+        #happy { opacity: 0; transition: opacity 1s ease; }
+        #happy.visible { opacity: 1; }
+        #happy a { color: inherit; text-decoration: none; }
+        #happy a:visited { color: inherit; }
+    </style>
+</head>
+<body>
+    <div class="center-viewport">
+        <h1>ok here's your website damn</h1>
+        <div>
+            <p id="happy">happy <a href="checkpoints/oak.html"><span id="now-word">now</span></a>?</p>
+        </div>
+    </div>
+
+    <script src="happy.js" defer></script>
+</body>
+</html>
+

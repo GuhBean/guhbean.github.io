@@ -1,0 +1,158 @@
+:root {
+    --border-color: #333;
+    --cell-size: 50px;
+    --background-color: #f0f0f0;
+    --accent-color: #4a90e2;
+}
+
+body {
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background: radial-gradient(circle, #fdfdfd 0%, #e8e8e8 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    color: #333;
+}
+
+.container {
+    padding: 20px;
+    text-align: center;
+}
+
+h1 {
+    font-weight: 300;
+    letter-spacing: 1px;
+    margin-bottom: 30px;
+    text-transform: lowercase;
+}
+
+.sudoku-board {
+    display: inline-grid;
+    margin: 0 auto;
+    grid-template-columns: repeat(9, var(--cell-size));
+    grid-template-rows: repeat(9, var(--cell-size));
+    border: 3px solid var(--border-color); /* Outer border */
+    background-color: white;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+
+.cell {
+    width: var(--cell-size);
+    height: var(--cell-size);
+    border: 1px solid #e0e0e0; /* Light borders for all cells */
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s;
+}
+
+.cell input {
+    width: 100%;
+    height: 100%;
+    border: none;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 500;
+    color: #2c3e50;
+    background: transparent;
+    cursor: pointer;
+    line-height: var(--cell-size);
+}
+
+.cell input:focus {
+    outline: none;
+    background-color: #bbdefb;
+}
+
+/* Thicker borders for 3x3 grids */
+.cell:nth-child(3n):not(:nth-child(9n)) {
+    border-right: 3px solid var(--border-color);
+}
+
+.cell:nth-child(n+19):nth-child(-n+27),
+.cell:nth-child(n+46):nth-child(-n+54) {
+    border-bottom: 3px solid var(--border-color);
+}
+
+
+.cell.readonly {
+    background-color: #f8f9fa;
+}
+
+.cell.readonly input {
+    color: #34495e !important;
+    font-weight: 800 !important;
+    cursor: default;
+}
+
+.cell:hover:not(.readonly) {
+    background-color: #f0f7ff;
+}
+
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: #fff;
+    padding: 2rem 3rem;
+    border-radius: 12px;
+    border: none;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+    text-align: center;
+}
+
+.modal-content h2 {
+    color: var(--accent-color);
+    margin-top: 0;
+    font-size: 24px;
+}
+
+.modal-content p {
+    color: #666;
+    margin-bottom: 1.5rem;
+}
+
+#continueBtn {
+    background-color: var(--accent-color);
+    color: white;
+    padding: 0.75rem 2rem;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+#continueBtn:hover {
+    background-color: #357abd;
+    transform: translateY(-1px);
+}
+
+#continueBtn:active {
+    transform: translateY(0);
+}
+
+
+@media (max-width: 500px) {
+    :root {
+        --cell-size: 35px;
+    }
+}

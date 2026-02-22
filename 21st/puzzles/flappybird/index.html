@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <title>flappy bird</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <canvas id="gameCanvas"></canvas>
+        <div id="scoreDisplay" class="score">0</div>
+        <div id="startPrompt" class="prompt">tap or space to fly</div>
+    </div>
+
+    <!-- Modal for Success (Only shown when you win) -->
+    <div id="messageModal" class="modal">
+        <div class="modal-content">
+            <h2>hooray!</h2>
+            <p>You got 15+ points!</p>
+            <button id="continueBtn">continue</button>
+        </div>
+    </div>
+
+    <!-- Modal for Retry -->
+    <div id="retryModal" class="modal">
+        <div class="modal-content">
+            <h2 id="deathTitle">oof</h2>
+            <p id="deathMessage">You need to reach 15 points to continue!</p>
+            <button id="retryBtn">try again</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
