@@ -6,46 +6,155 @@
   <meta name="viewport" content="width=device-width" />
   <title>happy birthday <3 </title>
 
-  <link rel="stylesheet" href="styles/flexbox-center-container.css" media="all">
-  <link rel="stylesheet" href="styles/system-fonts.css" media="all">
   <link rel="stylesheet" href="styles/style.css" media="all">
+  <style>
+    body {
+      background: linear-gradient(135deg, #ffc0e0 0%, #ffe0f0 50%, #fff0f8 100%);
+      min-height: 100vh;
+      overflow-y: auto;
+    }
+    
+    .container {
+      background: rgba(255, 255, 255, 0.7);
+      border-radius: 20px;
+      box-shadow: 0 8px 32px rgba(255, 105, 180, 0.2);
+      padding: 60px 48px;
+      max-width: 800px;
+      margin: 30px auto;
+      backdrop-filter: blur(10px);
+    }
+    
+    h1 {
+      color: #ff69b4;
+      font-size: 2.5em;
+      margin-bottom: 10px;
+      text-shadow: 2px 2px 4px rgba(255, 105, 180, 0.1);
+    }
+    
+    .intro-text {
+      color: #d946a6;
+      font-size: 1.1em;
+      margin-bottom: 40px;
+      font-style: italic;
+    }
+    
+    section {
+      margin-bottom: 40px;
+      padding: 30px;
+      background: linear-gradient(to bottom, #fff5fb, #fffbfe);
+      border-radius: 15px;
+      border-left: 5px solid #ff69b4;
+    }
+    
+    section h2 {
+      color: #ff1493;
+      font-size: 1.8em;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    
+    ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+      width: fit-content;
+      margin: 0 auto;
+    }
+    
+    li {
+      display: block;
+      padding: 0;
+    }
+    
+    a {
+      display: inline-block;
+      background: linear-gradient(135deg, #ff69b4, #ff1493);
+      color: white;
+      padding: 12px 24px;
+      border-radius: 25px;
+      text-decoration: none;
+      font-size: 0.95em;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(255, 105, 180, 0.3);
+      cursor: pointer;
+    }
+    
+    a:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 20px rgba(255, 105, 180, 0.4);
+      background: linear-gradient(135deg, #ff1493, #ff69b4);
+    }
+    
+    a:active {
+      transform: translateY(-1px);
+    }
+    
+    .heart {
+      display: inline-block;
+      color: #ff1493;
+      margin: 0 5px;
+      animation: pulse 1.5s ease-in-out infinite;
+    }
+    
+    @keyframes pulse {
+      0%, 100% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.1);
+      }
+    }
+  </style>
 </head>
 
 <body>
-  <main class="container" style="padding:48px;">
-    <h1>happy-bday-stupid — Index</h1>
-    <p>Quick links to the main pages inside the <code>17th/</code> and <code>18th/</code> folders.</p>
+  <main class="container">
+    <h1><span class="heart">💖</span> happy birthday stupid <span class="heart">💖</span></h1>
+    <p class="intro-text">links to all ur birthday celebrations</p>
 
-    <section aria-labelledby="seventeen">
-      <h2 id="seventeen">17th</h2>
+    <section aria-labelledby="twenty-first">
+      <h2 id="twenty-first">✨ 21st Birthday ✨</h2>
       <ul>
-        <li><a href="17th/index.html">17th — index</a></li>
-        <li><a href="17th/happy/birthday.html">17th — happy/birthday</a></li>
-        <li><a href="17th/happy/birthday/card.html">17th — happy/birthday/card</a></li>
+        <li><a href="21st/index.html">🎉 Frontpage</a></li>
+        <li><a href="21st/checkpoints/oak.html">🌳 Checkpoint - Oak</a></li>
+        <li><a href="21st/puzzles/sliding/index.html">🧩 Puzzle - Back</a></li>
+        <li><a href="21st/checkpoints/elm.html">🌳 Checkpoint - Elm</a></li>
+        <li><a href="21st/puzzles/sudoku/index.html">🔢 Puzzle - Sudoku</a></li>
+        <li><a href="21st/checkpoints/birch.html">🌳 Checkpoint - Birch</a></li>
+        <li><a href="21st/puzzles/captcha/index.html">🤖 Puzzle - Captcha</a></li>
+        <li><a href="21st/puzzles/flappybird/index.html">🐦 Puzzle - Flappy Bird</a></li>
+        <li><a href="21st/checkpoints/rowan.html">🌳 Checkpoint - Rowan</a></li>
+        <li><a href="21st/board/index.html">💬 Message Board</a></li>
       </ul>
     </section>
 
     <section aria-labelledby="eighteen">
-      <h2 id="eighteen">18th</h2>
+      <h2 id="eighteen">🎈 18th Birthday</h2>
       <ul>
-        <li><a href="18th/index.html">18th — index</a></li>
-        <li><a href="18th/gift/slides.html">18th — gift/slides</a></li>
-        <li><a href="18th/gift/birthday/card.html">18th — gift/birthday/card</a></li>
-        <li><a href="18th/http/error/error.html">18th — http/error/error</a></li>
-        <li><a href="18th/escape/me.html">18th — escape/me</a></li>
+        <li><a href="18th/index.html">🎉 Frontpage</a></li>
+        <li><a href="18th/escape/me.html">🎮 Escape Me</a></li>
+        <li><a href="18th/gift/slides.html">🎁 Gift Slides</a></li>
+        <li><a href="18th/gift/birthday/card.html">💌 Birthday Card</a></li>
+        <li><a href="18th/http/error/error.html">⚠️ HTTP Error</a></li>
+        <li><a href="18th/http/glitch.html">🌀 HTTP Glitch</a></li>
+        <li><a href="18th/https/glitch.html">🔐 HTTPS Glitch</a></li>
       </ul>
     </section>
 
-    <!-- <section aria-labelledby="twenty-first">
-      <h2 id="twenty-first">21st</h2>
+    <section aria-labelledby="seventeen">
+      <h2 id="seventeen">🎂 17th Birthday</h2>
       <ul>
-        <li><a href="21st/index.html">21st — index</a></li>
+        <li><a href="17th/index.html">🎉 Frontpage</a></li>
+        <li><a href="17th/happy/birthday.html">🌸 Slides</a></li>
+        <li><a href="17th/happy/birthday/card.html">💌 Birthday Card</a></li>
       </ul>
-    </section> -->
+    </section>
 
   </main>
 </body>
-<script src="scripts/confetti.min.js" charset="utf-8"></script>
-<script src="scripts/index.js" charset="utf-8"></script>
 
 </html>
