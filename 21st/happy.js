@@ -50,7 +50,7 @@
 
   window.addEventListener('load', function () {
     disableDevTools();
-    setTimeout(showHappy, 10000);
+    setTimeout(showHappy, 5000);
     setupHoverSwap();
   });
 })();

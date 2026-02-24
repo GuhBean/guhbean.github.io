@@ -25,10 +25,10 @@ body {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2, 1fr);
-    gap: 50px;
-    padding: 40px;
-    width: 90vw;
-    height: 85vh;
+    gap: 30px;
+    padding: 30px;
+    width: 95vw;
+    height: 90vh;
     max-width: 1400px;
 }
 
@@ -38,7 +38,7 @@ body {
     flex-direction: column;
     align-items: center;
     perspective: 1000px;
-    height: 360px;
+    height: 100%;
 }
 
 .pin {
@@ -78,8 +78,10 @@ body {
 }
 
 .photo-card {
-    width: 280px;
-    height: 320px;
+    width: 100%;
+    max-width: 240px;
+    height: calc(100% - 50px);
+    max-height: 280px;
     background: white;
     padding: 15px;
     box-shadow: 
